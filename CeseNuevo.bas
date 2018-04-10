@@ -1,5 +1,5 @@
-Attribute VB_Name = "CeseNuevo"
-Sub NUEVO()
+Attribute VB_Name = "Nuevo"
+Sub Nuevo()
     'Borrar datos de PareoMarcajes
     Sheets("PareoMarcajes").Select
     Cells.Select

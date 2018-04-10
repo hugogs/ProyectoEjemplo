@@ -1,4 +1,4 @@
-Attribute VB_Name = "LuisDist_OC"
+Attribute VB_Name = "Dist01Y02"
 Sub Dist_OC_1()
     'Elaborado por Hugo Garcia S.
     'V1.3 21.12.17
@@ -9,12 +9,12 @@ Sub Dist_OC_1()
     Do
         respSod = MsgBox("¿La EMPRESA a trabajar es SODIMAC?", vbYesNo + vbQuestion + vbDefaultButton1, "Decisión de continuar...")
         If respSod = vbYes Then
-            Call GuardarArchivo("Sodimac")
+            Call guardarArchivo("Sodimac")
             Call Dist_OC_C_S
         Else
             respMa = MsgBox("¿La EMPRESA a trabajar es MAESTRO?", vbYesNo + vbQuestion + vbDefaultButton1, "Decisión de continuar...")
             If respMa = vbYes Then
-                Call GuardarArchivo("Maestro")
+                Call guardarArchivo("Maestro")
                 Call Dist_OC_C_M
             End If
         End If
@@ -457,7 +457,7 @@ Sub Dist_OC_3()
     Range("O1").Select
     ActiveWorkbook.Save
 End Sub
-Sub GuardarArchivo(ByVal m As String)
+Sub guardarArchivo(ByVal m As String)
     Dim marca, mesSig As String
     Dim mes, año As Integer
     

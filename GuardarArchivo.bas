@@ -1,5 +1,5 @@
-Attribute VB_Name = "GuardarArchivo"
-Sub GuardarArchivo()
+Attribute VB_Name = "Pruebas"
+Sub guardarArchivo()
     Dim marca, mesSig As String
     Dim mes, año As Integer
     'Valido si la carpeta existe (ByVal m As String)
