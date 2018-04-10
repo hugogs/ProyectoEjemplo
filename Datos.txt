@@ -1,0 +1,45 @@
+GENERAR LLAVE
+
+1)Posicionarse en la carpeta del proyecto
+
+2)Generar la llave SSH(En consola):
+
+	ssh-keygen -t rsa -b 4096 -C "emailRepositorio" +enter
+
+3)Copiar la llave para registrarlo en GitHub:
+
+	pbcopy < ~/.ssh/id_rsa.pub (Para Mac)
+
+	cat < ~/.ssh/id_rsa.pub (Para Windows)
+
+4)Ingresar a Settings (github), opcion SSH and GPG Keys, click new SSH key, title and key, click Add ssh key
+
+
+
+CONEXION ENTRE REPOSITORIO REMOTO-LOCAL
+
+1)Posicionarse en la carpeta del proyecto
+
+2)Conectando:
+
+	git remote add origin (copiar enlace SSH)
+git remote -v (lista los cambios)
+
+	git remote remove origin (para borrarlo)
+
+
+
+ENVIANDO CAMBIOS AL REPOSITORIO REMOTO
+
+1)Se envia al repositorio remoto->a origin->a master
+  git push origin master
+
+2)Enviando tags
+  git push origin master --tags
+
+	git push origin master "RAMA"
+
+
+
+NOTAS:
+  Dato: AltGr + tecla ñ => ~
