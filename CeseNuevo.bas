@@ -41,7 +41,11 @@ Sub CESE()
 End Sub
 Sub DNI_Texto()
     Sheets("CESE").Select
-    Range("A9").Select
+    Range("A9").ClearContents
+    Sheets("PareoMarcajes").Select
+    Range("B12").Copy
+    Sheets("CESE").Select
+    Range("A9").PasteSpecial xlPasteValues
     'DNI a texto
     Selection.TextToColumns Destination:=Range("A9"), DataType:=xlDelimited, _
         TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=True, _
@@ -105,7 +109,7 @@ If cond1 = True Then
     textoUltTrabajo = textoUltTrabajo
     For i = 0 To 40
         If ActiveCell.Value = "ULTIMO" Then
-            textoUltTrabajo = textoUltTrabajo & "Último día de marcación:" & Chr(10) & Cells(2 + i, 4).Value & Chr(10)
+            textoUltTrabajo = textoUltTrabajo & "Ãšltimo dÃ­a de marcaciÃ³n:" & Chr(10) & Cells(2 + i, 4).Value & Chr(10)
             Exit For
         End If
         ActiveCell.Offset(1, 0).Select
@@ -128,7 +132,7 @@ If cond2 = True Then
     textoUltTrabajo = textoUltTrabajo
     For j = 0 To 40
         If ActiveCell.Value = "DESCANSO" Then
-            textoUltTrabajo = textoUltTrabajo & "Día Libre Semanal:" & Chr(10) & Cells(2 + j, 4).Value
+            textoUltTrabajo = textoUltTrabajo & "DÃ­a Libre Semanal:" & Chr(10) & Cells(2 + j, 4).Value
             Exit For
         End If
         ActiveCell.Offset(1, 0).Select
@@ -151,7 +155,7 @@ If cond3 = True Then
     textoUltTrabajo = textoUltTrabajo
     For j = 0 To 40
         If ActiveCell.Value = "VACACIONES" Then
-            textoUltTrabajo = textoUltTrabajo & "Último día de vacaciones:" & Chr(10) & Cells(2 + j, 4).Value
+            textoUltTrabajo = textoUltTrabajo & "Ãšltimo dÃ­a de vacaciones:" & Chr(10) & Cells(2 + j, 4).Value
             Exit For
         End If
         ActiveCell.Offset(1, 0).Select
